@@ -1,115 +1,131 @@
-// Elementos globales
-const unlockSound = document.getElementById("unlockSound");
-unlockSound.volume = 0.4; // Volumen al 40% para que sea un sonido suave y agradable
+// ==========================================
+// 1. LÓGICA DEL BLOQUEADOR (3 CLICS - SIEMPRE AL RECARGAR)
+// ==========================================
+let clicsLocker = 0;
+const smartlinkURL = "https://www.effectivegatecpm.com/udwqdtkwf?key=2439b5fa83ecf2fd05ad50db1ef80d65";
 
-// Inicializar todas las tarjetas de desbloqueo
+function registrarClicLocker() {
+    clicsLocker++;
+    window.open(smartlinkURL, '_blank');
+    
+    let faltan = 3 - clicsLocker;
+    const contadorTexto = document.getElementById('clics-restantes');
+    if (contadorTexto) {
+        contadorTexto.innerText = faltan + " clics";
+    }
+
+    if (clicsLocker >= 3) {
+        const overlay = document.getElementById('locker-overlay');
+        if (overlay) overlay.style.display = 'none';
+        // Nota: Al no guardar nada en localStorage, el bloqueador vuelve a salir al refrescar F5.
+    }
+}
+
+// ==========================================
+// 2. LÓGICA ORIGINAL DE DESBLOQUEO DE TARJETAS
+// ==========================================
+const unlockSound = document.getElementById("unlockSound");
+if (unlockSound) unlockSound.volume = 0.4;
+
 document.querySelectorAll('.unlock-card').forEach(initCard);
 
 function initCard(card) {
-  const id = card.dataset.id; // ID único para localStorage (1, 2, 3...)
-  const waitTime = parseInt(card.dataset.wait) || 15; // Tiempo específico o 15s por defecto
-  
-  // Elementos dentro de esta tarjeta específica
+  const waitTime = parseInt(card.dataset.wait) || 15;
   const likeBtn = card.querySelector(".like-btn");
   const subBtn = card.querySelector(".sub-btn");
+  const subBtn2 = card.querySelector(".sub-btn-2");
   const downloadBtn = card.querySelector(".download-btn");
   const timerBox = card.querySelector(".timer");
   const countEl = card.querySelector(".count");
   const fakeCounter = card.querySelector(".fake-counter");
 
-  // Variables de estado locales para esta tarjeta
-  let liked = false;
-  let subscribed = false;
-  let countdownInterval;
+  let liked = false, subscribed = false, subscribed2 = false, countdownInterval;
 
-  // Contador fake independiente
-  let fakeUsers = 120 + Math.floor(Math.random() * 50);
-  setInterval(() => {
-    if (fakeCounter) {
-      fakeUsers += Math.floor(Math.random() * 3);
-      fakeCounter.innerText = `🌟 ${fakeUsers} personas desbloqueando ahora`;
-    }
-  }, 1500 + Math.random() * 1000);
+  if (likeBtn) {
+    likeBtn.onclick = () => {
+      if (liked) return;
+      window.open(likeBtn.dataset.link, "_blank");
+      liked = true;
+      likeBtn.innerHTML = "✅ Like Completado";
+      startCountdown(waitTime, () => unlockSubBtn());
+    };
+  }
 
-  // --- Eventos ---
+  if (subBtn) {
+    subBtn.onclick = () => {
+      if (subscribed) return;
+      window.open(subBtn.dataset.link, "_blank");
+      subscribed = true;
+      subBtn.innerHTML = "✅ Suscripción 1 OK";
+      startCountdown(waitTime, () => subBtn2 ? unlockSubBtn2() : unlockButton());
+    };
+  }
 
-  // 1. Botón Like
-  likeBtn.onclick = () => {
-    if (liked) return;
-    window.open(likeBtn.dataset.link, "_blank");
-    liked = true;
-    likeBtn.innerHTML = "✅ Like Completado";
-    startCountdown(waitTime, () => unlockSubBtn(false));
-  };
+  if (subBtn2) {
+    subBtn2.onclick = () => {
+      if (subscribed2) return;
+      window.open(subBtn2.dataset.link, "_blank");
+      subscribed2 = true;
+      subBtn2.innerHTML = "✅ Suscripción 2 OK";
+      startCountdown(waitTime, () => unlockButton());
+    };
+  }
 
-  // 2. Botón Suscribirse
-  subBtn.onclick = () => {
-    if (subscribed) return;
-    window.open(subBtn.dataset.link, "_blank");
-    subscribed = true;
-    subBtn.innerHTML = "✅ Suscripción Completada";
-    startCountdown(waitTime, () => unlockButton(false));
-  };
-
-  // 3. Botón Descarga
-  downloadBtn.onclick = () => {
-    window.open(downloadBtn.dataset.link, "_blank");
-  };
-
-  // --- Funciones Auxiliares ---
+  if (downloadBtn) {
+    downloadBtn.onclick = () => { window.open(downloadBtn.dataset.link, "_blank"); };
+  }
 
   function startCountdown(seconds, callback) {
     if (countdownInterval) clearInterval(countdownInterval);
-    timerBox.classList.remove("hidden");
+    if (timerBox) timerBox.classList.remove("hidden");
     let time = seconds;
-    countEl.innerText = time;
+    if (countEl) countEl.innerText = time;
     countdownInterval = setInterval(() => {
       time--;
-      countEl.innerText = time;
-      if (time <= 0) {
-        clearInterval(countdownInterval);
-        if (callback) callback();
-      }
+      if (countEl) countEl.innerText = time;
+      if (time <= 0) { clearInterval(countdownInterval); if (callback) callback(); }
     }, 1000);
   }
 
-  function unlockSubBtn(instant) {
-    timerBox.classList.add("hidden");
-    subBtn.disabled = false;
-    subBtn.classList.remove("locked");
-    subBtn.innerHTML = "🔔 Suscribirse al Canal";
+  function unlockSubBtn() {
+    if (timerBox) timerBox.classList.add("hidden");
+    if (subBtn) { subBtn.disabled = false; subBtn.classList.remove("locked"); subBtn.innerHTML = "🔔 Suscribirse 1"; }
   }
 
-  function unlockButton(instant) {
-    timerBox.classList.add("hidden");
-    downloadBtn.disabled = false;
-    downloadBtn.classList.remove("locked");
-    downloadBtn.innerHTML = "⬇️ Ir al Link";
-    
-    if (!instant) {
-      unlockSound.play();
-      if (navigator.vibrate) navigator.vibrate(200);
-      launchConfetti();
-    }
+  function unlockSubBtn2() {
+    if (timerBox) timerBox.classList.add("hidden");
+    if (subBtn2) { subBtn2.disabled = false; subBtn2.classList.remove("locked"); subBtn2.innerHTML = "🔔 Suscribirse 2"; }
+  }
+
+  function unlockButton() {
+    if (timerBox) timerBox.classList.add("hidden");
+    if (downloadBtn) { downloadBtn.disabled = false; downloadBtn.classList.remove("locked"); downloadBtn.innerHTML = "⬇️ Ir al Link"; }
+    if (unlockSound) unlockSound.play();
+    launchConfetti();
   }
 }
 
-// Confeti simple
 function launchConfetti() {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 30; i++) {
     const div = document.createElement("div");
-    div.className = "confetti";
-    div.style.left = Math.random() * 100 + "%";
-    
-    // el uso de los acentos graves ` ` 
+    div.style.position = "fixed"; div.style.width = "10px"; div.style.height = "10px";
     div.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
-    
-    div.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    div.style.left = Math.random() * 100 + "vw"; div.style.top = "-10px";
+    div.style.zIndex = "9999"; div.style.borderRadius = "2px";
+    div.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(100vh) rotate(360deg)' }], { duration: 3000 });
     document.body.appendChild(div);
-
-    // Asegúrate de que diga "setTimeout"
-    setTimeout(() => { 
-      div.remove(); 
-    }, 5000);
+    setTimeout(() => div.remove(), 3000);
   }
 }
+
+// Partículas y contador de visitas original
+setInterval(() => {
+  const p = document.createElement('div');
+  p.classList.add('particle');
+  p.style.width = '4px'; p.style.height = '4px';
+  p.style.left = Math.random()*100+'vw'; p.style.background = '#ffae00';
+  p.style.setProperty('--drift', (Math.random()-0.5)*100+'px');
+  p.style.animationDuration = '7s';
+  document.getElementById('particles-container').appendChild(p);
+  setTimeout(() => p.remove(), 7000);
+}, 400);

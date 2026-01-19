@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desbloquea el Link 🔓</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://pl28488770.effectivegatecpm.com/5b/16/f5/5b16f592723d84c5393f83423791f33d.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Parche YT - Biblioteca</title>
+    
+    <script src="https://pl28488782.effectivegatecpm.com/78/f7/a3/78f7a36fcf0878c51c7bcefbeb1fa58e.js"></script>
+    <script src="https://pl28488770.effectivegatecpm.com/5b/16/f5/5b16f592723d84c5393f83423791f33d.js"></script>
 
-<style>
-  @keyframes parpadeo {
-    0% { transform: scale(1); filter: brightness(1); }
-    50% { transform: scale(1.05); filter: brightness(1.3); }
-    100% { transform: scale(1); filter: brightness(1); }
-  }
-  @keyframes heartbeat {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
-  }
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes logoPop {
-    0% { opacity: 0; transform: scale(0.5); }
-    70% { transform: scale(1.1); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-  @keyframes shine {
-    0% { left: -150%; }
-    20% { left: 150%; }
-    100% { left: 150%; }
-  }
-  @keyframes neonFlash {
-    0%, 90% { color: #fff; text-shadow: 0 4px 10px rgba(0,0,0,0.8); filter: brightness(1); }
-    92% { color: #ff00ff; text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; filter: brightness(1.2); }
-    94% { color: #00ffff; text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; filter: brightness(1.2); }
-    96% { color: #ffff00; text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00; filter: brightness(1.2); }
-    100% { color: #fff; text-shadow: 0 4px 10px rgba(0,0,0,0.8); filter: brightness(1); }
-  }
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .feed-container { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 25px; }
+        .card { background-color: #ffffff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); }
+        .card-image { width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; cursor: pointer; }
+        .card-content { padding: 20px; }
+        .card-title { margin: 0 0 10px 0; font-size: 1.25rem; color: #1a1a1a; cursor: pointer; }
+        .card-title a { text-decoration: none; color: inherit; display: block; }
+        .card-meta { font-size: 0.85rem; color: #65676b; margin-bottom: 12px; font-weight: 500; }
+        .card-description { color: #444; line-height: 1.5; margin-bottom: 20px; }
+        
+        /* Carrusel y Header */
+        .header-wrapper { display: flex; flex-direction: column; gap: 8px; }
+        .banner-image { width: 100%; height: 115px; object-fit: cover; border-radius: 12px; }
+        .carousel-container { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 5px; scrollbar-width: none; }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-item { background-color: #ffffff; padding: 10px 20px; border-radius: 20px; white-space: nowrap; font-weight: bold; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; }
 
-  .unlock-card { max-width: 400px; margin: 0 auto 20px; width: 95%; }
-
-  .titulo-fecha { padding: 5px 10px 2px; display: flex; flex-direction: column; align-items: center; gap: 3px; position: relative; }
-  @keyframes gradientText { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-  .titulo-fecha h1 {
-    font-size: 1.1rem; font-weight: 900; text-transform: uppercase; margin: 0; line-height: 1.1; text-align: center; color: #fff;
-    background: linear-gradient(90deg, #ff0055, #ffae00, #ffff00, #ff0055);
-    background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    animation: gradientText 3s ease infinite; filter: drop-shadow(0 0 8px rgba(255, 0, 85, 0.5));
-  }
-
-  .titulo-fecha p {
-    font-size: 0.9rem; font-weight: bold; color: #fff; background: rgba(0, 0, 0, 0.7);
-    padding: 4px 15px; border-radius: 12px; border: 1px solid #ffae00; display: flex; align-items: center; gap: 8px;
-    box-shadow: 0 0 15px rgba(255, 174, 0, 0.2); text-transform: uppercase; letter-spacing: 1px; position: relative; overflow: hidden;
-  }
-
-  .video-portada { position: relative; border-radius: 20px; overflow: hidden; border: 3px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: all 0.4s; margin-bottom: 4px; }
-  .video-portada img { width: 100%; height: auto; display: block; }
-
-  .acciones { display: flex; flex-direction: column; gap: 5px; width: 100%; padding: 5px 15px 10px; box-sizing: border-box; }
-
-  .btn {
-    position: relative; width: 100%; padding: 8px 15px; border: none; border-radius: 12px; font-weight: 900; font-size: 0.9rem;
-    text-transform: uppercase; color: #fff; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 12px;
-  }
-  .btn.red { background: linear-gradient(135deg, #ff3d00, #d50000); border-bottom: 5px solid #9b0000; }
-  .btn.green { background: linear-gradient(135deg, #00e676, #00c853); border-bottom: 5px solid #009624; color: #003300; }
-
-  #particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #000; }
-  .particle { position: absolute; bottom: -10px; border-radius: 50%; animation: floatUp linear forwards; }
-  @keyframes floatUp { 0% { transform: translateY(0) translateX(0); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-120vh) translateX(var(--drift)); opacity: 0; } }
-
-  .search-container { max-width: 420px; width: 85%; margin: 20px auto 30px; position: relative; z-index: 50; }
-  .search-box-inner { background: #0f0f0f; border-radius: 48px; display: flex; align-items: center; padding: 4px 15px; border: 1px solid #333; }
-  #searchInput { flex: 1; background: transparent; border: none; color: #fff; outline: none; padding: 8px 0; }
-</style>
+        /* Perfil */
+        .profile-content { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 30px 20px; }
+        .profile-logo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 2px solid #eee; }
+        .social-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .social-btn { padding: 10px 20px; border-radius: 20px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; }
+        .youtube { background-color: #FF0000; }
+        .tiktok { background-color: #000000; }
+        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    </style>
 </head>
 <body>
 
-<div id="locker-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; display: flex; align-items: center; justify-content: center; font-family: sans-serif; text-align: center;">
-    <div style="background: white; padding: 30px; border-radius: 20px; max-width: 400px; width: 90%; box-shadow: 0 0 30px rgba(255,174,0,0.5);">
-        <div style="width: 80px; height: 80px; background: #f8f9fa; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 40px;">🔓</div>
-        <h2 style="margin: 0 0 10px; color: #000; font-weight: 900;">DESBLOQUEA EL ACCESO</h2>
-        <p style="color: #666; font-size: 14px; line-height: 1.4;">Debes hacer <span id="clics-restantes" style="color: #ff3d00; font-weight: bold; font-size: 18px;">3 clics</span> en el botón de abajo para liberar la Biblioteca de Hacks.</p>
-        
-        <button id="btn-anuncio" onclick="registrarClicLocker()" style="background: #f8f9fa; border: 2px solid #eee; border-radius: 15px; padding: 15px; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: space-between; margin-top: 20px;">
-            <div style="text-align: left;">
-                <span style="color: #28a745; font-weight: bold; display: block; font-size: 16px;">VER ANUNCIO CORTO</span>
-                <span style="color: #999; font-size: 11px;">Acceso instantáneo al completar</span>
+    <div class="feed-container">
+        <div class="header-wrapper">
+            <img src="Banner.jpeg" alt="Banner" class="banner-image">
+            <div class="carousel-container">
+                <div class="carousel-item" onclick="clicAnuncio()">Aimbot</div>
+                <div class="carousel-item" onclick="clicAnuncio()">Regedit</div>
+                <div class="carousel-item" onclick="clicAnuncio()">Panel</div>
+                <div class="carousel-item" onclick="clicAnuncio()">Fake Lag</div>
+                <div class="carousel-item" onclick="clicAnuncio()">Wall Hack</div>
+                <div class="carousel-item" onclick="clicAnuncio()">Macro</div>
+                <div class="carousel-item" onclick="clicAnuncio()">Balas Mágicas</div>
             </div>
-            <div style="background: #ffae00; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">→</div>
-        </button>
+        </div>
+
+        <article class="card">
+            <img src="fake lag.jpeg" class="card-image" onclick="irAIndex2()">
+            <div class="card-content">
+                <h2 class="card-title" onclick="irAIndex2()">Fake Lag Totalmente Gratis Descargar Para Android</h2>
+                <div class="card-meta">by El Parche YT - enero 2026</div>
+                <p class="card-description">¿Quieres mejorar tu experiencia en Free Fire con la ayuda de un fake lag en Android?</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="sensi.jpeg" class="card-image" onclick="irAIndex2()">
+            <div class="card-content">
+                <h2 class="card-title" onclick="irAIndex2()">Mejores Configuraciones de Sensibilidad 2026</h2>
+                <div class="card-meta">by El Parche YT - enero 2026</div>
+                <p class="card-description">Descubre la sensibilidad perfecta para dar todo rojo. Probado por profesionales.</p>
+            </div>
+        </article>
+
+        <div style="background: white; border-radius: 12px; padding: 10px; margin-bottom: 25px;">
+            <script async="async" data-cfasync="false" src="https://pl28503227.effectivegatecpm.com/ef3ee5d66850303fb9e05676f373efea/invoke.js"></script>
+            <div id="container-ef3ee5d66850303fb9e05676f373efea"></div>
+        </div>
+
+        <article class="card">
+            <img src="macro.jpeg" class="card-image" onclick="irAIndex2()">
+            <div class="card-content">
+                <h2 class="card-title" onclick="irAIndex2()">Macro Bolitas Azules - Guía Completa</h2>
+                <div class="card-meta">by El Parche YT - enero 2026</div>
+                <p class="card-description">Aprende a instalar y configurar la macro de bolitas azules para mejorar tu precisión.</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="regedit.jpeg" class="card-image" onclick="irAIndex2()">
+            <div class="card-content">
+                <h2 class="card-title" onclick="irAIndex2()">Regedit Mobile VIP: Aumenta tu DPI</h2>
+                <div class="card-meta">by El Parche YT - enero 2026</div>
+                <p class="card-description">Optimiza el registro de tu dispositivo Android para tener una respuesta más rápida.</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="texturas.jpeg" class="card-image" onclick="irAIndex2()">
+            <div class="card-content">
+                <h2 class="card-title" onclick="irAIndex2()">Pack de Texturas Visibles Ropa y Armas</h2>
+                <div class="card-meta">by El Parche YT - enero 2026</div>
+                <p class="card-description">Personaliza tu juego con este pack de texturas que incluye las skins más exclusivas.</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="ping.jpeg" class="card-image" onclick="irAIndex2()">
+            <div class="card-content">
+                <h2 class="card-title" onclick="irAIndex2()">Solución al Ping Alto y Lag en Gama Baja</h2>
+                <div class="card-meta">by El Parche YT - enero 2026</div>
+                <p class="card-description">Métodos efectivos para reducir el ping y eliminar el lag en dispositivos gama baja.</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-content profile-content">
+                <img src="logo.jpeg" class="profile-logo">
+                <div class="profile-name">Creador El Parche YT</div>
+                <div class="profile-description">aquí encuentras mis redes sociales para que me conozcas más</div>
+                <div class="social-buttons">
+                    <a href="javascript:void(0)" onclick="socialAd('http://googleusercontent.com/youtube.com/6')" class="social-btn youtube">YouTube</a>
+                    <a href="javascript:void(0)" onclick="socialAd('https://www.tiktok.com/@candelamusic3')" class="social-btn tiktok">Tik Tok</a>
+                    <a href="javascript:void(0)" onclick="socialAd('https://www.instagram.com/bairon_365')" class="social-btn instagram">Instagram</a>
+                </div>
+            </div>
+        </article>
     </div>
-</div>
 
-<div id="particles-container"></div>
-
-<header class="header-principal">
-  <div class="banner-contenedor">
-    <img src="banner.jpeg" alt="Banner" class="banner-imagen">
-  </div>
-  <div class="logo-seccion">
-    <div class="logo-borde"><img src="logo.jpeg" class="logo-img"></div>
-    <h1 class="logo-texto">El Parche <span class="highlight-yt">YT</span> <span class="verified-badge">✔</span></h1>
-    <div class="live-visitor-counter">
-      <span class="live-dot" style="width:8px; height:8px; background:#0f0; border-radius:50%; display:inline-block;"></span>
-      <span><strong id="visitor-count" style="color:#fff;">1,245</strong> personas en la web</span>
+    <div id="locker" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); z-index: 10000; display: flex; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: white; padding: 25px; border-radius: 25px; text-align: center; width: 90%; max-width: 320px; border: 4px solid #007bff; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <div style="font-size: 40px; margin-bottom: 10px;">🔒</div>
+            <h2 style="color:#333; margin: 0 0 10px 0; font-size: 22px; font-weight: 800; text-transform: uppercase;">Paso 1</h2>
+            <p style="color:#555; font-size: 15px; margin-bottom: 20px; font-weight: 500;">Haz 3 clics para acceder a la biblioteca.</p>
+            <button id="btn-lock" onclick="handleLock()" style="width: 100%; padding: 15px; background: linear-gradient(90deg, #007bff, #0056b3); color: white; border: none; border-radius: 50px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,123,255,0.4);">VER ANUNCIO (0/3)</button>
+        </div>
     </div>
-  </div>
-</header>
 
-<main>
-  <div class="search-container">
-    <div class="search-box-inner">
-      <input type="text" id="searchInput" placeholder="Buscar hack..." autocomplete="off">
-    </div>
-  </div>
+    <script>
+        const linkAnuncio = "https://www.effectivegatecpm.com/udwqdtkwf?key=2439b5fa83ecf2fd05ad50db1ef80d65";
+        let clicksLocker = 0;
 
-  <div class="unlock-card" data-id="2">
-    <div class="video-portada"><img src="Tienda.jpeg"></div>
-    <div class="titulo-fecha"><h1>TIENDA DE JUEGOS GRATIS</h1><p>14/01/2026</p></div>
-    <div class="acciones">
-      <button class="btn green download-btn" data-link="https://tienda10.github.io/Tienda-De-Juegos-Gratis/">🛒 Ir a la Tienda</button>
-      <div class="fake-counter">98 personas desbloqueando ahora</div>
-    </div>
-  </div>
+        function handleLock() {
+            clicksLocker++;
+            window.open(linkAnuncio, "_blank");
+            document.getElementById('btn-lock').innerText = `VER ANUNCIO (${clicksLocker}/3)`;
+            if(clicksLocker >= 3) document.getElementById('locker').style.display = 'none';
+        }
 
-  <div class="unlock-card" data-id="1" data-wait="10">
-    <div class="video-portada"><img src="portada_video.jpeg"></div>
-    <div class="titulo-fecha"><h1>HOLOGRAMA ARMAS 100% ANTIBAN</h1><p>16/01/2026</p></div>
-    <div class="acciones">
-      <button class="btn red like-btn" data-link="https://youtu.be/uRUTkaJ-JN8?si=yemp7K3LG9e7bwFJ">👍 Dar Like</button>
-      <button class="btn red locked sub-btn" disabled data-link="https://youtube.com/@el_parche_yt?si=LVTRhrYYY1I5L1iV">🔒 Suscribirse 1</button>
-      <button class="btn red locked sub-btn-2" disabled data-link="https://youtube.com/@gamenexo11?si=sgD-0NDY0j4IS8iu">🔒 Suscribirse 2</button>
-      <button class="btn green locked download-btn" disabled data-link="https://el-parche-yt.github.io/Generador-de-key1/">🔒 Bloqueado</button>
-      <div class="timer hidden">Espera <span class="count">10</span>s...</div>
-    </div>
-  </div>
-</main>
-
-<audio id="unlockSound" src="unlock.mp3"></audio>
-<script src="script.js"></script>
-
-<script src="https://pl28488782.effectivegatecpm.com/78/f7/a3/78f7a36fcf0878c51c7bcefbeb1fa58e.js"></script>
+        function irAIndex2() { 
+            window.open(linkAnuncio, "_blank");
+            setTimeout(() => {
+                window.location.href = "index2.html";
+            }, 500);
+        }
+        function clicAnuncio() { window.open(linkAnuncio, "_blank"); }
+        function socialAd(url) { window.open(linkAnuncio, "_blank"); setTimeout(() => { window.open(url, "_blank"); }, 800); }
+    </script>
 </body>
 </html>
